@@ -1,6 +1,3 @@
-/* for each option that has display: block; change display from block to none in js or the css file to hide the content */
-
-  
   body {
     height: 100vh;
   }
@@ -23,7 +20,6 @@
     font-size: 200%;
   }
   
-  /* change from display: block, to display: none; to remove this section. */
   #section-1 {
     display: block;
     justify-content: center;
@@ -43,7 +39,7 @@
     transition: .1s ease-in-out 0s;
     transform: scale(1.05);
   }
-  /* change from display: block, to display: none; to remove this section. */
+
   #section-2 {
     display: block;
   }
@@ -72,19 +68,19 @@
   .section-2-ptag-margin {
     margin-top: 2px;
   }
-  /* change from display: block, to display: none; to remove this. */
+
   #correct{
     display: block;
   }
-  /* change from display: block, to display: none; to remove this.*/
+
   #wrong {
     display: block;
   }
-  /* change from display: block, to display: none; to remove this section. */
+
   #section-3 {
     display: block;
   }
-  /* change from display: block, to display: none; to remove this section. */
+
   #section-4 {
     display: block;
   }
@@ -101,7 +97,7 @@
   .highscore-ol li:nth-child(odd) {
     background-color: rgba(75,0,130, .2);
   }
-  /* change from display: block, to display: none; to remove these indivually */
+
   #highscore-1 {
     display: block;
   }
@@ -145,7 +141,7 @@
   #section-4 button {
     margin-right: 10px;
   }
-  /* change from display: block, to display: none; to remove these corner items. */
+
   .corner-div {
     display: block;
   }
