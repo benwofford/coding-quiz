@@ -16,31 +16,16 @@ var answers3 = "String, Declaration, Function*, Variable";
 var answers4 = "Arrays, Strings*, Function, Variables";
 var answers5 = "Conditional Loop, Else Loop, For Loop, While Loop*";
 
-// This function initiates the timer --> needs big fix :(
-function countDown() {
-    $("#clock").html(counter);
-        timer= setInterval("countDown()", 1000);
-        counter--;
-        function timer() {
-            if (count == 0) {
-                countDown.stop();
-                return;
-            }
-        }
-};
+// This function initiates the timer
 
 
 // This hides the sections at page load until called upon
-$("#section-2").hide(); $("#section-3").hide(); $("#section-4").hide();
+function hideStart() {
+    
+}
 
 //When the start button is clicked this simultaneously calls up the quiz section and starts the timer
-$("#start-btn").click(function() {
-    $("#section-1").hide();
-        $("#section-2").show();
-            $(function() {
-                countDown();
-            })
-    $("section-2")
-});
+
 
 // Questions for the quiz will populate from the following lists
+
