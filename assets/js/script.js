@@ -1,7 +1,3 @@
-// Variables for the timer live here
-var counter = 75;
-var timer = null;
-
 // Variables for the questions live here
 var question1 = "What is the language or list of instructions that are executed by the computer (how JavaScript is built)?";
 var question2 = "In JavaScript, what is used in conjunction with HTML to “react” to certain elements?";
@@ -16,16 +12,43 @@ var answers3 = "String, Declaration, Function*, Variable";
 var answers4 = "Arrays, Strings*, Function, Variables";
 var answers5 = "Conditional Loop, Else Loop, For Loop, While Loop*";
 
-// This function initiates the timer
+// Show sections
+var showSection2 = function() {
+    document.getElementById("section-2").style.display='block';
+};
+var showSection3 = function() {
+    document.getElementById("section-3").style.display='';
+};
+var showSection4 = function() {
+    document.getElementById("section-4").style.display='';
+};
+
+// Start timer
+var timeleft = 75;
+var countDown = setInterval(function(){
+    
+    if(timeleft <= 0){
+        clearInterval(countDown);
+    document.getElementById("clock").innerHTML = "Time's up!";
+    } else {
+        document.getElementById("clock").innerHTML = timeleft;
+    }
+    timeleft -= 1;
+}, 1000);
 
 
 // This hides the sections at page load until called upon
-function hideStart() {
-    
-}
+window.onload = function() {
+    document.getElementById("section-2").style.display='none';
+    document.getElementById("section-3").style.display='none';
+    document.getElementById("section-4").style.display='none';
+};
 
 //When the start button is clicked this simultaneously calls up the quiz section and starts the timer
-
+function startQuiz() {
+    document.getElementById("start-btn").showSection2();
+    document.getElementById("start-btn").countDown();
+};
 
 // Questions for the quiz will populate from the following lists
 

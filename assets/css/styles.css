@@ -2,7 +2,7 @@
     height: 100vh;
   }
   
-  .whole-body {
+  .main-body {
     display: flex;
     justify-content: space-between;
   }
