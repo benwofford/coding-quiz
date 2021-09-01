@@ -1,22 +1,46 @@
-// Variables for the questions live here
-var questions = [
-  "What is the language or list of instructions that are executed by the computer (how JavaScript is built)?",
-  "In JavaScript, what is used in conjunction with HTML to “react” to certain elements?",
-  "In JavaScript, what is a block of code called that is used to perform a specific task?",
-  "In JavaScript, what element is used to store and manipulate text usually in multiples?",
-  "What is the type of loop that continues through a block of code as long as the specified condition remains TRUE?",
+var quiz = [
+  {
+    question: "What is the language or list of instructions that are executed by the computer (how JavaScript is built)?",
+    answers: ["Syntax", "scope", "output", "JSON"],
+    correctAnswer: "Syntax"
+  },
+  {
+    question: "In JavaScript, what is used in conjunction with HTML to “react” to certain elements?",
+    answers: ["Events", "RegExp", "Boolean", "Condition"],
+    correctAnswer: "Events"
+  },
+  {
+    question: "In JavaScript, what is a block of code called that is used to perform a specific task?",
+    answers:   ["String", "Declaration", "Function", "Variable"],
+    correctAnswer: "Function"
+  },
+  {
+    question: "In JavaScript, what element is used to store and manipulate text usually in multiples?",
+    answers:   ["Arrays", "Strings", "Function", "Variables"],
+    correctAnswer: "Strings"
+  },
+  {
+    question: "What is the type of loop that continues through a block of code as long as the specified condition remains TRUE?",
+    answers:   ["Conditional Loop", "Else Loop", "For Loop", "While Loop"],
+    correctAnswer: "While loop"
+  }
 ];
 
-// Variables for the answers live here
-var answers = [
-  ["Syntax", "scope", "output", "JSON"],
-  ["Events", "RegExp", "Boolean", "Condition"],
-  ["String", "Declaration", "Function", "Variable"],
-  ["Arrays", "Strings", "Function", "Variables"],
-  ["Conditional Loop", "Else Loop", "For Loop", "While Loop"],
-];
+var goodJob = function () {
+  document.getElementById("correct").style.display = "block";
+};
+
+var tryAgain = function () {
+  document.getElementById("wrong").style.display = "block";
+  timeleft -= 10;
+};
 
 var answerButtons = document.getElementsByClassName("answer-btn");
+
+var nextQuestion = function() {
+  document.getElementById("correct").style.display = "none";
+  document.getElementById("wrong").style.display = "none";
+};
 
 var questionCount = 0;
 
@@ -64,10 +88,11 @@ function startQuiz() {
 
 // This gets a question to populate the h2 tag
 var showQuestion = function() {
-    document.getElementById("question").textContent = questions [questionCount];
+    document.getElementById("question").textContent = quiz[questionCount].question;
     console.log(document.getElementsByClassName("answer-btn"));
-    for (var i = 0; i < answerButtons.length; i++) {
-        answerButtons[i].textContent = answers[questionCount][i];
+
+    for (var i = 0; i < quiz[questionCount].answers.length; i++) {
+        answerButtons[i].textContent = quiz[questionCount].answers[i];
     }
 };
 
@@ -75,26 +100,26 @@ var showQuestion = function() {
 for (var i = 0; i < answerButtons.length; i++) {
     answerButtons[i].addEventListener("click", function(e){
         console.log(e.target.textContent);
-        questionCount++
-        showQuestion();
-    })
-};
+        if(quiz[questionCount].correctAnswer === e.target.textContent) {
+          // right
+            quiz[i] === true;
+            goodJob();
+            questionCount++;
+            showQuestion();
+            // wrong
+        } else {
+            quiz[i] === !true;
+            tryAgain();
+            questionCount++;
+            showQuestion();
+          };
+        })
+    };
+    // nextQuestion();
 
-var dataCorrect = [
-  "Syntax",
-  "Events",
-  "Function",
-  "Strings",
-  "While loop"
-]
-
-// This looks for the correct/wrong answers and calls the corresponding p tag --> needs fix
- var correctAnswers = function() {
-   
-  }; 
 
 // This stops the quiz after the array finishes and calls up the final sections --> needs fix
-var quizComplete = function() {
+/* var quizComplete = function() {
 if (answerButtons.length > 5)
   return;
   showSection3();
@@ -103,18 +128,10 @@ if (answerButtons.length > 5)
 
 // Clicking View Highscores takes you to leaderboard
 
-// Using a data-attribute to point to the correct answer? (https://www.sitepoint.com/how-why-use-html5-custom-data-attributes/)
-
-// Making correct/wrong pop up
-
-// Then getting function(e) to "listen" for that data-attribute
-
-// Use a boolean method to check if answer was correct
-
 // Set timer subtraction for incorrect answers
 
 // Set timer 0 game over
 
 // Set initials/high score
 
-// README (get screenshots to populate without link)
+// README (get screenshots to populate without link)*/
