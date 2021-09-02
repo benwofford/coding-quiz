@@ -22,12 +22,16 @@ var quiz = [
   {
     question: "What is the type of loop that continues through a block of code as long as the specified condition remains TRUE?",
     answers:   ["Conditional Loop", "Else Loop", "For Loop", "While Loop"],
-    correctAnswer: "While loop"
+    correctAnswer: "While Loop"
   }
 ];
 
+var score = 0;
+
 var goodJob = function () {
   document.getElementById("correct").style.display = "block";
+  score = score +1;
+  document.getElementById("score").textContent = "Score: " + score;
 };
 
 var tryAgain = function () {
@@ -58,10 +62,10 @@ var showSection2 = function () {
   document.getElementById("section-2").style.display = "block";
 };
 var showSection3 = function () {
-  document.getElementById("section-3").style.display = "";
+  document.getElementById("section-3").style.display = "block";
 };
 var showSection4 = function () {
-  document.getElementById("section-4").style.display = "";
+  document.getElementById("section-4").style.display = "block";
 };
 
 // Start timer
@@ -106,29 +110,38 @@ for (var i = 0; i < answerButtons.length; i++) {
             goodJob();
             questionCount++;
             showQuestion();
+            // gameOver();
             // wrong
         } else {
             quiz[i] === !true;
             tryAgain();
             questionCount++;
             showQuestion();
+            // gameOver();
           };
         })
     };
-    // nextQuestion();
 
-
-// This stops the quiz after the array finishes and calls up the final sections --> needs fix
-/* var quizComplete = function() {
-if (answerButtons.length > 5)
-  return;
-  showSection3();
-  showSection4();
+var gameOver = function () {
+  if (quiz[i] > questionCount.length) {
+    document.getElementById("section-2").style.display = "none";
+    showSection3();
+    showSection4();
+    document.getElementById("game-over").textContent = "Game Over!"
+  }
+  if (timeleft === 0) {
+    document.getElementById("section-2").style.display = "none";
+    showSection3();
+    showSection4();
+    document.getElementById("game-over").textContent = "Game Over!"
+  } 
 };
 
-// Clicking View Highscores takes you to leaderboard
 
-// Set timer subtraction for incorrect answers
+
+// This stops the quiz after the array finishes and calls up the final sections
+
+// Clicking View Highscores takes you to leaderboard
 
 // Set timer 0 game over
 
