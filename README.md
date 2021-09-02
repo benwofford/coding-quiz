@@ -10,7 +10,7 @@ This project is currently incomplete as of time of submission but I intend to fi
 
 Here is where the game ends. I've struggled with getting the proper script to run the end of the game and bring up the high scores.
 
-! [Coding Quiz img] (images/Coding Quiz Screenshot.png?raw=true "Coding Quiz Image")
+! [Coding Quiz img] (images/Coding Quiz Screenshot.png "Coding Quiz Image")
 ## Features ##
 
 This features some questions and answers and it will tell you if you are right or wrong and keep score.
