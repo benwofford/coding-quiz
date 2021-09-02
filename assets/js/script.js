@@ -110,19 +110,23 @@ for (var i = 0; i < answerButtons.length; i++) {
             goodJob();
             questionCount++;
             showQuestion();
-            // gameOver();
             // wrong
         } else {
             quiz[i] === !true;
             tryAgain();
             questionCount++;
             showQuestion();
-            // gameOver();
           };
         })
     };
 
-var gameOver = function () {
+/* if (quiz[questionCount.length] > 5) {
+  stop.timeleft;
+  showSection3();
+  showSection4();
+}
+
+/* var gameOver = function () {
   if (quiz[i] > questionCount.length) {
     document.getElementById("section-2").style.display = "none";
     showSection3();
@@ -137,14 +141,9 @@ var gameOver = function () {
   } 
 };
 
-
-
-// This stops the quiz after the array finishes and calls up the final sections
-
+TODO: 
 // Clicking View Highscores takes you to leaderboard
 
 // Set timer 0 game over
 
-// Set initials/high score
-
-// README (get screenshots to populate without link)*/
+// Set initials/high score */
